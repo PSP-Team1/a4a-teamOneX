@@ -1,0 +1,56 @@
+version: "3"
+services:
+  database:
+    image: mysql:8.0
+    container_name: db
+    build:
+      context: .
+      dockerfile: docker/mysql/Dockerfile
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    volumes:
+      - db:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+      ci_net:
+  web:
+    container_name: apache-web
+    build:
+      context: .
+      dockerfile: docker/apache/Dockerfile
+      args:
+        uid: ${UID}
+    environment:
+      - APACHE_RUN_USER=#${UID}
+      - APACHE_RUN_GROUP=#${UID}
+    restart: unless-stopped
+    volumes:
+      - ./a4a:/var/www/html
+      - ./apache_log:/var/log/apache2
+      - ./php_ini/php.ini:/usr/local/etc/php/php.ini
+    ports:
+      - 80:80
+    links:
+      - database
+    networks:
+      ci_net:
+  phpmyadmin:
+    container_name: pma
+    depends_on:
+      - database
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8887:80"
+    env_file:
+      - .env
+    networks:
+      ci_net:
+volumes:
+  db:
+networks:
+  ci_net:

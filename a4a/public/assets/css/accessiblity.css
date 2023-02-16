@@ -1,0 +1,13 @@
+.floating-btn {
+  position: fixed;  
+  top: 625px;   
+  left: 20px;     
+  z-index: 99;     
+  color: #fff;    
+  border: none;    
+  border-radius: 50%;  
+  width: 60px;     
+  height: 60px;    
+  font-size: 32px; 
+  cursor: pointer; 
+}
