@@ -40,6 +40,12 @@
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <style>
+        .container {
+            max-width: 96%;
+        }
+    </style>
 </head>
 
 
@@ -53,29 +59,31 @@
         <div class="ibox">
             <div class="ibox-title">
                 <h4>Accessibility Audit</h4>
-                <button id="increase-font">Increase Font Size</button> <!-- increase font button -->
+                <div style="visibility:hidden;">
+                    <button id="increase-font">Increase Font Size</button> <!-- increase font button -->
 
-                <button id="decrease-font">Decrease Font Size</button> <!-- decrease font button-->
+                    <button id="decrease-font">Decrease Font Size</button> <!-- decrease font button-->
 
-                <button id="grayscale-toggle">Toggle Greyscale</button>
-                <!--grayscale button-->
+                    <button id="grayscale-toggle">Toggle Greyscale</button>
+                    <!--grayscale button-->
 
-                <button id="high-contrast-button">High Contrast</button>
-                <!--high contrast button -->
+                    <button id="high-contrast-button">High Contrast</button>
+                    <!--high contrast button -->
 
-                <button id="light-background">Light Background</button>
-                <!--light background button -->
+                    <button id="light-background">Light Background</button>
+                    <!--light background button -->
 
-                <button id="negative-contrast-button">Negative Contrast</button>
-                <!--negative contrast button -->
+                    <button id="negative-contrast-button">Negative Contrast</button>
+                    <!--negative contrast button -->
 
-                <button id="reset-button">reset button</button>
-                <!--reset button -->
+                    <button id="reset-button">reset button</button>
+                    <!--reset button -->
+                </div>
                 <div class="ibox-tools">
                 </div>
             </div>
             <div class="ibox-content">
-                <div class="m-b-sm m-t-sm">
+                <div class="col-lg-6">
 
                     <div class="input-group">
 
