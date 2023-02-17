@@ -15,11 +15,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </head>
 
-<div class="dropdown">
-        <button href="#accessibilityModal" data-bs-toggle="modal" class="btn btn-secondary floating-btn" type="button">
-        <b>A</b>
-        </button>
-        </div>
 
        
     
@@ -31,8 +26,9 @@
  
       </style>
 <style>
-  .light-background {
+  .light-background .fusion-header {
     display: block;
+    background-color: white;
   }
   #white-image {
     position: fixed;
@@ -946,7 +942,8 @@ Professional access consultancy, training, auditing and design appraisal service
             <header class="fusion-header-wrapper">
                 <div class="fusion-header-v1 fusion-logo-alignment fusion-logo-left fusion-sticky-menu-1 fusion-sticky-logo- fusion-mobile-logo-1  fusion-mobile-menu-design-classic">
                     <div class="fusion-header-sticky-height"></div>
-                    <div class="fusion-header">
+                    <div class="fusion-header" style="background-color: #eeeeee;">
+                        
                         <div class="fusion-row">
                             <div class="fusion-logo" data-margin-top="31px" data-margin-bottom="31px" data-margin-left="0px" data-margin-right="0px">
                                 <a class="fusion-logo-link" href="https://accessandinclusion.com/">
@@ -2204,6 +2201,7 @@ toggleButton.addEventListener('click', toggleGrayscale);
   }
 
   lightBackgroundBtn.addEventListener("click", toggleLightBackground);
+  
 </script>
 
 <!--high contrast-->
