@@ -21,16 +21,13 @@ class AuditModel extends Model
             ca.company_id,
             count(car.response) AS audit_prog,
             count(car.id) AS audit_total
-
-            FROM company c
-            inner JOIN company_audit ca ON
+            FROM company_audit ca
+            inner JOIN company c ON
             ca.audit_template = c.id
-
             inner JOIN audit_template atemp ON 
             ca.audit_template = atemp.id
             JOIN company_audit_response car ON 
             car.audit_id = ca.id
-
             GROUP BY ca.id";
         $results = $db->query($sql)->getResult('array');
         return $results;
@@ -94,7 +91,59 @@ class AuditModel extends Model
         }
 
         // Return true if the update or insert was successful, false otherwise
-        return $db->affectedRows() > 0;
+        $data['success_status'] =  $db->affectedRows() > 0;
+        $data['percent'] = $this->getAudCompStatus($data['id']);
+        return $data;
+    }
+
+
+     function getAuditSummary($id){
+
+        $db = db_connect();
+        $sql = "
+            SELECT 
+                ca.id AS audit_id,
+                atemp.auditor,
+                atemp.audit_version,
+                atemp.published_status,
+                atemp.legislation_version,
+                ca.company_id,
+                count(car.response) AS audit_prog,
+                count(car.id) AS audit_total
+            FROM company_audit ca
+            INNER JOIN company c ON
+                ca.audit_template = c.id
+            INNER JOIN audit_template atemp ON 
+                ca.audit_template = atemp.id
+            JOIN company_audit_response car ON 
+                car.audit_id = ca.id
+            WHERE audit_id = " . $id . "
+            GROUP BY ca.id";
+        $query = $db->query($sql);
+        $result = $query->getFirstRow('array');
+        return $result;
+    }
+
+
+    // get percent value
+    function getAudCompStatus($tid){
+        $db = db_connect();
+        $sql = "
+        SELECT COUNT(id) AS qCount, 
+            COUNT(response) AS qComp 
+            FROM company_audit_response 
+            where audit_id = (SELECT audit_id FROM company_audit_response WHERE id = ".$tid.")
+            GROUP BY audit_id limit 1";
+
+        $results = $db->query($sql)->getResult('array');
+
+        $percent = 0;
+        // Protect div zero
+        if($results){
+            $denom = $results[0]['qCount'];
+            $percent = (intval($results[0]['qComp']) != 0) ? (100/ $denom ) * intval($results[0]['qComp']) : 0;
+        } 
+        return $percent;
     }
 
     

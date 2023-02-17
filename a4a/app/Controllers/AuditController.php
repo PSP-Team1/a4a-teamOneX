@@ -61,9 +61,10 @@ class AuditController extends BaseController
                 'notes' => $this->request->getVar('notes'),
             ];
     
-            // Insert the data into the database
-            if ($res = $model->updateResponse($data)) {
-                return $this->response->setJSON(['success' => true, 'message' => 'Response added successfully.']);
+            $res = $model->updateResponse($data);
+
+            if ($res['success_status']) {
+                return $this->response->setJSON(['success' => true, 'message' => 'Response added successfully.', 'percent'=> $res['percent']]);
             } else {
                 return $this->response->setJSON(['success' => false, 'message' => 'Error updating database.','details'=>json_encode($data,true)]);
             }
@@ -103,11 +104,9 @@ class AuditController extends BaseController
 
     public function openAudit($i){
 
-
         $am = new AuditModel();
-
-        $data['audit_data'] = $am->getAudits();
-        $data['question_data'] = $am->getQuestions(21);
+        $data['summary'] = $am->getAuditSummary($i);
+        $data['question_data'] = $am->getQuestions($i);
         $data['audit_id'] = $i;
         return view('viewAudit', $data);
     }

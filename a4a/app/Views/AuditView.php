@@ -40,6 +40,12 @@
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <style>
+        .container {
+            max-width: 96%;
+        }
+    </style>
 </head>
 
 
@@ -52,30 +58,32 @@
 
         <div class="ibox">
             <div class="ibox-title">
-                <h4>Accessibility Audit</h4>
-                <button id="increase-font">Increase Font Size</button> <!-- increase font button -->
+                <h2>My Accessibility Audits</h2>
+                <div style="visibility:hidden;">
+                    <button id="increase-font">Increase Font Size</button> <!-- increase font button -->
 
-                <button id="decrease-font">Decrease Font Size</button> <!-- decrease font button-->
+                    <button id="decrease-font">Decrease Font Size</button> <!-- decrease font button-->
 
-                <button id="grayscale-toggle">Toggle Greyscale</button>
-                <!--grayscale button-->
+                    <button id="grayscale-toggle">Toggle Greyscale</button>
+                    <!--grayscale button-->
 
-                <button id="high-contrast-button">High Contrast</button>
-                <!--high contrast button -->
+                    <button id="high-contrast-button">High Contrast</button>
+                    <!--high contrast button -->
 
-                <button id="light-background">Light Background</button>
-                <!--light background button -->
+                    <button id="light-background">Light Background</button>
+                    <!--light background button -->
 
-                <button id="negative-contrast-button">Negative Contrast</button>
-                <!--negative contrast button -->
+                    <button id="negative-contrast-button">Negative Contrast</button>
+                    <!--negative contrast button -->
 
-                <button id="reset-button">reset button</button>
-                <!--reset button -->
+                    <button id="reset-button">reset button</button>
+                    <!--reset button -->
+                </div>
                 <div class="ibox-tools">
                 </div>
             </div>
             <div class="ibox-content">
-                <div class="m-b-sm m-t-sm">
+                <div class="col-lg-6">
 
                     <div class="input-group">
 
@@ -95,15 +103,24 @@
                             </thead>
                             <tbody>
 
-                                <?php foreach ($audit_data as $item){?>
+                                <?php foreach ($audit_data as $item){
+                                    
+                                    $qCount = $item['audit_total'];
+                                    $cCount = $item['audit_prog'];
+                                    $percComplete = ($qCount > 0) ? 100 / $qCount * $cCount : 0;
+                                    ?>
 
                                 <tr>
                                     <td><?= $item['audit_version'] ?></td>
-                                    <td><?= $item['audit_prog'] ."/". $item['audit_total']  ?></td>
+                                    <td>
+                                        <div class="progress progress-small">
+                                            <div style="width: <?=$percComplete;?>%;" class="progress-bar"></div>
+                                        </div>
+                                    </td>
                                     <td class="text-center">
                                         <a class="btn btn-success btn-outline"
-                                            href="/AuditController/openAudit/<?=$item['audit_id']?>" role="button"> View
-                                            Audit(s)</a>
+                                            href="/AuditController/openAudit/<?=$item['audit_id']?>" role="button"> <i
+                                                class="fa fa-eye"></i> View</a>
                                     </td>
                                 </tr>
                                 <?php }?>
