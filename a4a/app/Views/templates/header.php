@@ -57,7 +57,11 @@
 $session = session();
 $role = $session->get('type');
 
+$avatar = (isset($_SESSION['avatar']))? $_SESSION['avatar']: "Jack.jpg";
+
+
 ?>
+
 
 
 <style>
@@ -65,7 +69,7 @@ $role = $session->get('type');
     width: 50px;
     height: 50px;
     object-fit: cover;
-    background-image: url('<?= base_url(); ?>/assets/img/avatars/<?= $_SESSION['avatar']?>');
+    background-image: url('<?= base_url(); ?>/assets/img/avatars/<?= $avatar?>');
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
