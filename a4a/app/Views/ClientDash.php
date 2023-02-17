@@ -13,8 +13,13 @@ if ($hour >= 5 && $hour <= 11) {
     $timeOfDay .= "Good Evening,";
 }
 
+
+
 $session = session();
-$user = $session->get('email');
+$user = $session->get('name');
+
+
+
 ?>
 
 
@@ -62,7 +67,6 @@ $user = $session->get('email');
             </div>
 
             <div class="ibox-content">
-                <?= print_r($b_cust)?>
                 <table class="footable table table-stripped toggle-arrow-tiny tablet breakpoint footable-loaded">
                     <thead>
                         <tr>
