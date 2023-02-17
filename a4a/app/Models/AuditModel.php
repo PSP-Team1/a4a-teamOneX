@@ -7,6 +7,12 @@ use CodeIgniter\Model;
 class AuditModel extends Model
 {
 
+    protected $table = 'company'; 
+
+    public function getCompanies()
+    {
+        return $this->findAll();
+    }
     function getAudits()
     {
         $db = db_connect();
