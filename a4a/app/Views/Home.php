@@ -32,11 +32,17 @@
       </style>
 <style>
   .light-background {
-  background: #ffffff;
-  display: none;
-
-}
-  </style>
+    display: block;
+  }
+  #white-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+</style>
 
   <style>
   .high-contrast {
@@ -2174,37 +2180,31 @@ toggleButton.addEventListener('click', toggleGrayscale);
 </script>
 
 
-<!--lightbackground--> 
+<!--light background-->
+
 <script>
-const lightBackgroundBtn = document.querySelector("#light-background");
-const image =  document.querySelector('img');
+  const lightBackgroundBtn = document.querySelector("#light-background");
 
-function toggleLightBackground() {
-  if (document.body.style.backgroundColor) {
-    document.body.style.backgroundColor = "";
-  } else {
-    document.body.style.backgroundColor = "#ffffff";
-  } 
-}
-function RemoveImage() {
-  const images = document.querySelectorAll('img');
-  images.forEach(image => {
-    image.remove();
-    if (document.body.style.Image) {
-    document.body.style.image = "";
-  } else {
-    document.body.style.backgroundColor = image.remove();
-  } 
-  });
-}
+  function toggleLightBackground() {
+    const body = document.querySelector("body");
+    const whiteImage = document.createElement("img");
+    whiteImage.setAttribute("src", "assets/img/whitebackground.jpg");
+    whiteImage.setAttribute("id", "white-image");
+    
+    if (body.style.backgroundColor) {
+      body.style.backgroundColor = "";
+      const existingImage = document.querySelector("#white-image");
+      if (existingImage) {
+        existingImage.remove();
+      }
+    } else {
+      body.style.backgroundColor = "#ffffff";
+      body.appendChild(whiteImage);
+    }
+  }
 
-
-
-lightBackgroundBtn.addEventListener("click", toggleLightBackground);
-lightBackgroundBtn.addEventListener("click", RemoveImage);
-
-
-  </script>
+  lightBackgroundBtn.addEventListener("click", toggleLightBackground);
+</script>
 
 <!--high contrast-->
 <script>
