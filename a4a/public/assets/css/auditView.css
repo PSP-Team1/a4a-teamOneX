@@ -3,8 +3,8 @@
 .tab-container {
   display: flex;
   flex-direction: row;
-  max-height: 100vh;
-  width: 100vw;
+  /* max-height: 100vh; */
+  /* width: 100vw; */
   position: relative;
   overflow-y: scroll;
 }
@@ -54,12 +54,12 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  color: black;
+  color: #0d6efd;
   transition: 0.3s;
 }
 
 .wizard-nav-item.active {
-  background-color: black;
+  background-color: #0d6efd;
   color: white;
   font-size: 110%;
   transition: 0.3s;
@@ -71,8 +71,20 @@ h1 {
 
 #scroll-to-top-btn {
   position: fixed;
-  bottom: 20px;
+  bottom: 10%;
   right: 20px;
+}
+
+.section-title {
+  padding: 5px;
+  position: sticky;
+  top: 0;
+  background-color: #0d6efd;
+  color: white;
+  z-index: 2;
+}
+.section-title h1 {
+  margin: 0;
 }
 
 /* Image uploader */
@@ -152,15 +164,6 @@ h1 {
   height: calc(7.5em + 0.75rem + 2px) !important;
 }
 
-/* Overrides */
-.modal-body {
-  padding: 0;
-}
-.modal-title {
-  font-weight: 600;
-  color: #333;
-}
-
 /* Radio buttons */
 
 .respOptions {
@@ -170,4 +173,58 @@ h1 {
 
 .respOptions label {
   flex-basis: 50%;
+}
+
+/* Scroll bar adjustments */
+
+/* Hide the scrollbar track and icon */
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+/* Style the scrollbar on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555555;
+}
+
+/* Hide the scrollbar but enable scrolling */
+.tab-container {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tab-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Overrides */
+.modal-body {
+  padding: 0;
+}
+.modal-title {
+  font-weight: 600;
+  color: #333;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+  .tab-list {
+    display: none;
+  }
+
+  .tab-pane {
+    padding: 0;
+  }
+  .main-title {
+    display: none;
+    transition: 0.4;
+  }
 }

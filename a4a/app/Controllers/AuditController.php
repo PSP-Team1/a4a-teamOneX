@@ -103,10 +103,8 @@ class AuditController extends BaseController
 
     public function openAudit($i){
 
-
         $am = new AuditModel();
-
-        $data['audit_data'] = $am->getAudits();
+        $data['summary'] = $am->getAuditSummary($i);
         $data['question_data'] = $am->getQuestions(21);
         $data['audit_id'] = $i;
         return view('viewAudit', $data);

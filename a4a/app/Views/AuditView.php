@@ -58,7 +58,7 @@
 
         <div class="ibox">
             <div class="ibox-title">
-                <h4>Accessibility Audit</h4>
+                <h2>My Accessibility Audits</h2>
                 <div style="visibility:hidden;">
                     <button id="increase-font">Increase Font Size</button> <!-- increase font button -->
 
@@ -103,15 +103,24 @@
                             </thead>
                             <tbody>
 
-                                <?php foreach ($audit_data as $item){?>
+                                <?php foreach ($audit_data as $item){
+                                    
+                                    $qCount = $item['audit_total'];
+                                    $cCount = $item['audit_prog'];
+                                    $percComplete = ($qCount > 0) ? 100 / $qCount * $cCount : 0;
+                                    ?>
 
                                 <tr>
                                     <td><?= $item['audit_version'] ?></td>
-                                    <td><?= $item['audit_prog'] ."/". $item['audit_total']  ?></td>
+                                    <td>
+                                        <div class="progress progress-small">
+                                            <div style="width: <?=$percComplete;?>%;" class="progress-bar"></div>
+                                        </div>
+                                    </td>
                                     <td class="text-center">
                                         <a class="btn btn-success btn-outline"
-                                            href="/AuditController/openAudit/<?=$item['audit_id']?>" role="button"> View
-                                            Audit(s)</a>
+                                            href="/AuditController/openAudit/<?=$item['audit_id']?>" role="button"> <i
+                                                class="fa fa-eye"></i> View</a>
                                     </td>
                                 </tr>
                                 <?php }?>
