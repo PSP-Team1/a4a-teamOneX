@@ -945,15 +945,11 @@ Professional access consultancy, training, auditing and design appraisal service
                             <div class="fusion-logo" data-margin-top="31px" data-margin-bottom="31px" data-margin-left="0px" data-margin-right="0px">
                                 <a class="fusion-logo-link" href="https://accessandinclusion.com/">
 
-                                  <style>
-                                img {
-                                width: 100px;
-                                height: 100px;
-                                }
-                                </style>
-
+                              
+                         
                                 <img src="assets/img/Everybody-Welcome-logo.png" alt="Description of the image">
-
+                            
+                                  
 
 
                                 </a>
