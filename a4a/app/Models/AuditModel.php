@@ -91,7 +91,9 @@ class AuditModel extends Model
         }
 
         // Return true if the update or insert was successful, false otherwise
-        return $db->affectedRows() > 0;
+        $data['success_status'] =  $db->affectedRows() > 0;
+        $data['percent'] = $this->getAudCompStatus($data['id']);
+        return $data;
     }
 
 
@@ -120,6 +122,28 @@ class AuditModel extends Model
         $query = $db->query($sql);
         $result = $query->getFirstRow('array');
         return $result;
+    }
+
+
+    // get percent value
+    function getAudCompStatus($tid){
+        $db = db_connect();
+        $sql = "
+        SELECT COUNT(id) AS qCount, 
+            COUNT(response) AS qComp 
+            FROM company_audit_response 
+            where audit_id = (SELECT audit_id FROM company_audit_response WHERE id = ".$tid.")
+            GROUP BY audit_id limit 1";
+
+        $results = $db->query($sql)->getResult('array');
+
+        $percent = 0;
+        // Protect div zero
+        if($results){
+            $denom = $results[0]['qCount'];
+            $percent = (intval($results[0]['qComp']) != 0) ? (100/ $denom ) * intval($results[0]['qComp']) : 0;
+        } 
+        return $percent;
     }
 
     

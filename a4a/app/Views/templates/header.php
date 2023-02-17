@@ -60,10 +60,36 @@ $role = $session->get('type');
 ?>
 
 
+<style>
+  .avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    background-image: url('<?= base_url(); ?>/assets/img/avatars/<?= $_SESSION['avatar']?>');
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: solid 1px grey;
+  }
+
+  .links-right {
+    display: flex;
+    min-width: 10%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+</style>
+
 <body id="body-pd">
   <header class="header" id="header">
+
     <div class="header_toggle">
       <i class='bx bx-menu' id="header-toggle"></i>
+      <div class="header_img">
+
+      </div>
       <?php if($role == "client") : ?>
       <h4 class="nav-title">Access For All - <span style="color: navy">Client Portal</h4>
       <?php endif; ?>
@@ -71,12 +97,14 @@ $role = $session->get('type');
       <h4 class="nav-title">Access For All - <span style="color: navy">Customer Portal</h4>
       <?php endif; ?>
     </div>
-    <div class="header_img">
-      <img src="<?= base_url(); ?>assets/img/avatars/john-engineer.jpg" alt="" />
-    </div>
 
-    <a class="btn btn-outline btn-primary" href="/clientInbox" role="button"> <i class="fa fa-envelope-o"></i> View
-      Inbox</a>
+    <div class="links-right">
+      <h4><?= isset($_SESSION['name'])? $_SESSION['name'] : ""; ?></h4>
+      <div class="avatar">
+      </div>
+      <a class="btn btn-outline btn-primary" href="/clientInbox" role="button"> <i class="fa fa-envelope-o"></i> View
+        Inbox</a>
+    </div>
 
   </header>
   <div class="l-navbar" id="nav-bar">
@@ -88,13 +116,16 @@ $role = $session->get('type');
         $session = session();
         $role = $session->get('type');
         ?>
+
     <nav class="nav">
+
       <div>
         <a href="#" class="nav_logo">
 
           <div style="height:15px">
             <img style="height: 100%; " src="" alt="">
             <span class="nav_logo-name">A4A</span>
+
           </div>
         </a>
 
