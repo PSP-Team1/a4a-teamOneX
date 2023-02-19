@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="<?= base_url() ?>/assets/img/favicon.ico">
   <meta name="theme-color" content="#ffffff">
+
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -106,6 +108,14 @@ $avatar = (isset($_SESSION['avatar']))? $_SESSION['avatar']: "Jack.jpg";
       <h4><?= isset($_SESSION['name'])? $_SESSION['name'] : ""; ?></h4>
       <div class="avatar">
       </div>
+     
+
+      <img src="assets/img/Everybody-Welcome-logo.png" alt="Description of the image" max-width:="" 50px;="" style="
+    max-width: 100px;
+    position: relative;
+    left: -1050px;
+">
+
       <a class="btn btn-outline btn-primary" href="/clientInbox" role="button"> <i class="fa fa-envelope-o"></i> View
         Inbox</a>
     </div>

@@ -38,6 +38,19 @@
 
     }
 </style>
+.light-background .fusion-header {
+display: block;
+background-color: white;
+}
+#white-image {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+}
+</style>
 
 <style>
     .high-contrast {
@@ -1000,15 +1013,21 @@ Professional access consultancy, training, auditing and design appraisal service
                 <div
                     class="fusion-header-v1 fusion-logo-alignment fusion-logo-left fusion-sticky-menu-1 fusion-sticky-logo- fusion-mobile-logo-1  fusion-mobile-menu-design-classic">
                     <div class="fusion-header-sticky-height"></div>
-                    <div class="fusion-header">
+                    <div class="fusion-header" style="background-color: #eeeeee;">
+
                         <div class="fusion-row">
                             <div class="fusion-logo" data-margin-top="31px" data-margin-bottom="31px"
                                 data-margin-left="0px" data-margin-right="0px">
                                 <a class="fusion-logo-link" href="https://accessandinclusion.com/">
 
+                                    <style>
+                                        img {
+                                            width: 100px;
+                                            height: 100px;
+                                        }
+                                    </style>
 
-                                    <img style="max-height:100px;" src="assets/img/Everybody-Welcome-logo.png"
-                                        alt="Description of the image">
+                                    <img src="assets/img/Everybody-Welcome-logo.png" alt="Description of the image">
 
 
 
@@ -2464,7 +2483,12 @@ Professional access consultancy, training, auditing and design appraisal service
     <!--lightbackground-->
     <script>
         const lightBackgroundBtn = document.querySelector("#light-background");
-        const image = document.querySelector('img');
+        const image = document.querySelector('img'); <
+        !--light background-- >
+
+        <
+        script >
+            const lightBackgroundBtn = document.querySelector("#light-background");
 
         function toggleLightBackground() {
             if (document.body.style.backgroundColor) {
@@ -2487,9 +2511,29 @@ Professional access consultancy, training, auditing and design appraisal service
         }
 
 
+        function toggleLightBackground() {
+            const body = document.querySelector("body");
+            const whiteImage = document.createElement("img");
+            whiteImage.setAttribute("src", "assets/img/whitebackground.jpg");
+            whiteImage.setAttribute("id", "white-image");
+
+            if (body.style.backgroundColor) {
+                body.style.backgroundColor = "";
+                const existingImage = document.querySelector("#white-image");
+                if (existingImage) {
+                    existingImage.remove();
+                }
+            } else {
+                body.style.backgroundColor = "#ffffff";
+                body.appendChild(whiteImage);
+            }
+        }
 
         lightBackgroundBtn.addEventListener("click", toggleLightBackground);
         lightBackgroundBtn.addEventListener("click", RemoveImage);
+    </script>
+    lightBackgroundBtn.addEventListener("click", toggleLightBackground);
+
     </script>
 
     <!--high contrast-->
