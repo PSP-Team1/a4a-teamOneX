@@ -83,53 +83,98 @@
                 </div>
             </div>
             <div class="ibox-content">
-                <div class="col-lg-6">
+                <div class="row">
 
-                    <div class="input-group">
 
-                        <input type="text" class="form-control form-control-sm">
-
-                        <div class="input-group-append">
-                            <button tabindex="-1" class="btn btn-primary btn-sm" type="button">Search</button>
+                    <div class="col-lg-6">
+                        <div class="widget style1 lazur-bg">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <i class="fa fa-shield fa-4x"></i>
+                                </div>
+                                <div class="col-8 text-right">
+                                    <span> Accessibility Score </span>
+                                    <h2 class="font-bold">95% compliant</h2>
+                                    <p>Your company is in the top 10%</p>
+                                </div>
+                            </div>
                         </div>
-
-                        <table class="table table-hover margin bottom">
-                            <thead>
-                                <tr>
-                                    <th>Version</th>
-                                    <th>Status</th>
-                                    <th>View</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <?php foreach ($audit_data as $item){
-                                    
-                                    $qCount = $item['audit_total'];
-                                    $cCount = $item['audit_prog'];
-                                    $percComplete = ($qCount > 0) ? 100 / $qCount * $cCount : 0;
-                                    ?>
-
-                                <tr>
-                                    <td><?= $item['audit_version'] ?></td>
-                                    <td>
-                                        <div class="progress progress-small">
-                                            <div style="width: <?=$percComplete;?>%;" class="progress-bar"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <a class="btn btn-success btn-outline"
-                                            href="/AuditController/openAudit/<?=$item['audit_id']?>" role="button"> <i
-                                                class="fa fa-eye"></i> View</a>
-                                    </td>
-                                </tr>
-                                <?php }?>
-
-                            </tbody>
-                        </table>
-
-
                     </div>
+
+                    <div class="col-lg-6">
+                        <div class="widget style1 yellow-bg">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <i class="fa fa-bell fa-4x"></i>
+                                </div>
+                                <div class="col-8 text-right">
+                                    <span> Improvement Areas </span>
+                                    <h2 class="font-bold">5 items</h2>
+                                    <p>Explore solutions</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+
+                        <div class="input-group">
+
+                            <input type="text" class="form-control form-control-sm">
+
+                            <div class="input-group-append">
+                                <button tabindex="-1" class="btn btn-primary btn-sm" type="button">Search</button>
+                            </div>
+
+                            <table class="table table-hover margin bottom">
+                                <thead>
+                                    <tr>
+                                        <th>Version</th>
+                                        <th>Status</th>
+                                        <th>View</th>
+                                        <th>Audit Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php foreach ($audit_data as $item){
+                
+                $qCount = $item['audit_total'];
+                $cCount = $item['audit_prog'];
+                $percComplete = ($qCount > 0) ? 100 / $qCount * $cCount : 0;
+                ?>
+
+                                    <tr>
+                                        <td><?= $item['audit_version'] ?></td>
+                                        <td>
+                                            <div class="progress progress-small">
+                                                <div style="width: <?=$percComplete;?>%;" class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn btn-success btn-outline"
+                                                href="/AuditController/openAudit/<?=$item['audit_id']?>" role="button">
+                                                <i class="fa fa-eye"></i> View</a>
+                                        </td>
+                                        <td>
+
+
+                                            <?php 
+                                                $datetime = new DateTime( $item['date_created']);
+                                                $formattedDate = $datetime->format('Y-m-d');
+                                                ?>
+                                            <?= $formattedDate?></td>
+                                    </tr>
+                                    <?php }?>
+
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+
                 </div>
 
 

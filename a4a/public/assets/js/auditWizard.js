@@ -89,7 +89,7 @@ const progUpdate = (value) => {
   var titleProg = document.getElementById('title-percent');
 
   prog.style.width = value + '%';
-  titleProg.innerHTML = value + '%';
+  // titleProg.innerHTML = value + '%';
 
   console.log("value", value)
 }
