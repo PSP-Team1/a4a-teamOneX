@@ -1006,14 +1006,8 @@ Professional access consultancy, training, auditing and design appraisal service
                                 data-margin-left="0px" data-margin-right="0px">
                                 <a class="fusion-logo-link" href="https://accessandinclusion.com/">
 
-                                    <style>
-                                        img {
-                                            width: 100px;
-                                            height: 100px;
-                                        }
-                                    </style>
 
-                                    <img style="max-height:60px;" src="assets/img/Everybody-Welcome-logo.png"
+                                    <img style="max-height:100px;" src="assets/img/Everybody-Welcome-logo.png"
                                         alt="Description of the image">
 
 
@@ -2376,7 +2370,7 @@ Professional access consultancy, training, auditing and design appraisal service
                                 })) : (null !== e.querySelector(
                                 ".menu-item-has-children.expanded .fusion-open-nav-submenu-on-click") && e
                             .querySelector(".menu-item-has-children.expanded .fusion-open-nav-submenu-on-click")
-                        .click(), e.classList.remove("collapse-enabled"), e.setAttribute("aria-expanded", "true"),
+                            .click(), e.classList.remove("collapse-enabled"), e.setAttribute("aria-expanded", "true"),
                             null !== e.querySelector(".fusion-custom-menu") && e.querySelector(".fusion-custom-menu")
                             .removeAttribute("style")), e.classList.add("no-wrapper-transition"), clearTimeout(t), t =
                         setTimeout(() => {

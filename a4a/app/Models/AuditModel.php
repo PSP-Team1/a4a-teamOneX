@@ -26,7 +26,8 @@ class AuditModel extends Model
             atemp.legislation_version,
             ca.company_id,
             count(car.response) AS audit_prog,
-            count(car.id) AS audit_total
+            count(car.id) AS audit_total,
+            ca.date_created
             FROM company_audit ca
             inner JOIN company c ON
             ca.audit_template = c.id

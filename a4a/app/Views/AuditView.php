@@ -133,6 +133,7 @@
                                         <th>Version</th>
                                         <th>Status</th>
                                         <th>View</th>
+                                        <th>Audit Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -156,6 +157,14 @@
                                                 href="/AuditController/openAudit/<?=$item['audit_id']?>" role="button">
                                                 <i class="fa fa-eye"></i> View</a>
                                         </td>
+                                        <td>
+
+
+                                            <?php 
+                                                $datetime = new DateTime( $item['date_created']);
+                                                $formattedDate = $datetime->format('Y-m-d');
+                                                ?>
+                                            <?= $formattedDate?></td>
                                     </tr>
                                     <?php }?>
 
