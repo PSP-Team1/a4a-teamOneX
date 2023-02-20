@@ -96,25 +96,23 @@ $avatar = (isset($_SESSION['avatar']))? $_SESSION['avatar']: "Jack.jpg";
       <div class="header_img">
 
       </div>
+      <img src="assets/img/Everybody-Welcome-logo.png" alt="Description of the image" max-width:="" 50px;="" style="
+    max-width: 100px;
+    position: relative;
+    left: 0px;
+">
       <?php if($role == "client") : ?>
-      <h4 class="nav-title">Access For All - <span style="color: navy">Client Portal</h4>
+      <h4 style="position: relative; top: 10px; left: 15px;" class="nav-title">Access For All - <span style="color: purple">Admin Portal</h4>
       <?php endif; ?>
       <?php if($role == "customer") : ?>
-      <h4 class="nav-title">Access For All - <span style="color: navy">Customer Portal</h4>
+      <h4 style="position: relative; top: 10px; left: 15px;" class="nav-title">Access For All - <span style="color: purple">Customer Portal</h4>
       <?php endif; ?>
     </div>
 
     <div class="links-right">
-      <h4><?= isset($_SESSION['name'])? $_SESSION['name'] : ""; ?></h4>
+      <h4 style="position: relative; left: 15px;">Signed in as: <span style="color: purple"><?= isset($_SESSION['name'])? $_SESSION['name'] : ""; ?></h4>
       <div class="avatar">
       </div>
-     
-
-      <img src="assets/img/Everybody-Welcome-logo.png" alt="Description of the image" max-width:="" 50px;="" style="
-    max-width: 100px;
-    position: relative;
-    left: -1050px;
-">
 
       <a class="btn btn-outline btn-primary" href="/clientInbox" role="button"> <i class="fa fa-envelope-o"></i> View
         Inbox</a>

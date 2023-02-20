@@ -14,7 +14,7 @@ if ($hour >= 5 && $hour <= 11) {
 }
 
 $session = session();
-$user = $session->get('email');
+$user = $session->get('name');
 ?>
 
 
