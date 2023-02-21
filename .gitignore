@@ -23,3 +23,4 @@ a4a/app/.DS_Store
 a4a/writable/debugbar/debugbar_1675657039.508162.json
 a4a/app/.DS_Store
 a4a/.DS_Store
+node_app/node_modules/*

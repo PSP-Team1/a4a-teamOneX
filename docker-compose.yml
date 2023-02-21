@@ -43,11 +43,23 @@ services:
     depends_on:
       - database
     image: phpmyadmin/phpmyadmin
-    restart: always
+    restart: unless-stopped
     ports:
       - "8887:80"
     env_file:
       - .env
+    networks:
+      ci_net:
+  node:
+    container_name: node
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./node_app:/app
+    ports:
+      - 3000:3000
     networks:
       ci_net:
 volumes:
