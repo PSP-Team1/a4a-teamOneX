@@ -58,8 +58,8 @@
 
 <body class="animate__animated animate__fadeIn">
 <div class="dropdown">
-        <button href="#accessibilityModal" data-bs-toggle="modal" class="btn btn-secondary floating-btn" type="button">
-        <b>A</b>
+        <button href="#accessibilityModal" data-bs-toggle="modal" class="accessButton floating-btn" type="button">
+        <b>Accessibility</b>
         </button>
         </div>
 
@@ -81,40 +81,55 @@
         </style>
 
 
-        <div id="accessibilityModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Accessibility Features</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
+<div id="accessibilityModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Accessibility Features</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                                <button class="btn btn-outline-secondary" id="increase-font">Increase Font Size</button> <!-- increase font button -->
 
-                    <button class="btn btn-secondary" id="increase-font">Increase Font Size</button> <!-- increase font button -->
-
-                    <button class="btn btn-secondary" id="decrease-font">Decrease Font Size</button> <!-- decrease font button-->
-
-                    <hr>
-
-                    <button class="btn btn-secondary" id="negative-contrast-button">Negative Contrast</button><!--negative contrast button -->
-
-                    <button class="btn btn-secondary" id="high-contrast-button">High Contrast</button> <!--high contrast button -->
+                    <button class="btn btn-outline-secondary" id="decrease-font">Decrease Font Size</button> <!-- decrease font button-->
 
                     <hr>
 
-                    <button class="btn btn-secondary" id="grayscale-toggle">Toggle Greyscale</button> <!--grayscale button-->
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="negative-contrast-button">
+                        <label class="form-check-label" for="negative-contrast-button">
+                            Negative Contrast
+                        </label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="high-contrast-button">
+                        <label class="form-check-label" for="high-contrast-button">
+                            High Contrast
+                        </label>
+                    </div>
 
-                    <button class="btn btn-secondary" id="light-background">Light Background</button> <!--light background button -->
-                            
+                    <hr>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="grayscale-toggle">
+                        <label class="form-check-label" for="grayscale-toggle">
+                            Toggle Greyscale
+                        </label>
                     </div>
-                    <div class="modal-footer">
-                    <button class="btn btn-secondary" id="reset-button">Reset</button><!--reset button -->
-                        <button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">Close</button>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="light-background">
+                        <label class="form-check-label" for="light-background">
+                            Light Background
+                        </label>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="reset-button">Reset</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 
     <div class="wrapper">
 

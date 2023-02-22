@@ -2532,7 +2532,7 @@ Professional access consultancy, training, auditing and design appraisal service
 
         lightBackgroundBtn.addEventListener("click", toggleLightBackground);
         lightBackgroundBtn.addEventListener("click", RemoveImage);
-    </script>
+    <script>
     lightBackgroundBtn.addEventListener("click", toggleLightBackground);
 
     </script>
