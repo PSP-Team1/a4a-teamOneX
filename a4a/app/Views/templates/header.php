@@ -146,7 +146,7 @@ $avatar = (isset($_SESSION['avatar']))? $_SESSION['avatar']: "Jack.jpg";
           <a href="<?= base_url() ?>/clientPortal"
             class="nav_link <?= ($activePage == "clientPortal" ? "active" : "") ?>">
             <i class='bx bx-grid-alt nav_icon'></i>
-            <span class="nav_name">Dashboard</span>
+            <span class="nav_name">Admin Dashboard</span>
           </a>
 
           <a href="<?= base_url() ?>/createTemplate"

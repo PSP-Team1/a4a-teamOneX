@@ -59,7 +59,7 @@
 
         <style>
             body {
-                background-image: url('https://static.vecteezy.com/system/resources/previews/007/934/082/original/abstract-yellow-and-green-gradient-waves-background-glowing-lines-on-green-background-vector.jpg');
+                background-image: url('https://images.wallpaperscraft.com/image/single/texture_spots_lemon_143188_1920x1080.jpg');
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
@@ -112,13 +112,14 @@
             <section class="Login-form">
 
                 <div class="fusion-separator fusion-no-medium-visibility fusion-no-large-visibility fusion-full-width-sep"
-                    style="align-self: center;margin-left: auto;margin-right: auto;margin-top:20px;margin-bottom:10px;width:100%;">
+                    style="align-self: center;margin-left: auto;margin-right: auto;margin-top:40px;margin-bottom:10px;width:100%;">
                 </div>
 
 
                 <div class="form-content">
+                    
                     <div>
-                        <h3 style="text-align: center;">Register New Company Account</h3>
+                        <h3 style="text-shadow: 1px 1px 1px white; color: black; text-align: center;">Register New Company</h3>
                     </div>
 
                     <hr>
@@ -146,12 +147,12 @@
                             <div class="input-group" style="display: flex;">
                                 <input type="password" name="password" placeholder="Password" class="form-control"
                                     required onkeyup="isGood(this.value)">
-                                <button type="button" class="btn btn-sm btn-outline-success" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                     href="#accountModal" aria-label="Password requirements">
                                     <i class="fas fa-info-circle"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-success ml-1"
-                                    id="show-password-btn">Show</button>
+                                <button type="button" class="btn btn-success ml-1"
+                                    id="show-password-btn"><i class="fas fa-eye-slash"></i></button>
                             </div>
                             <small style="height: 2px" class="help-block" id="password-text"></small>
                         </div>
@@ -297,14 +298,17 @@
                             showPasswordBtn.addEventListener('click', () => {
                                 if (passwordField.type === 'password') {
                                     passwordField.type = 'text';
-                                    showPasswordBtn.textContent = 'Hide';
-                                    toastr.info('Password Shown');
+                                    //showPasswordBtn.textContent = 'Hide';
+                                    showPasswordBtn.innerHTML = '<i class="fas fa-eye"></i>';
+                                    toastr.success('Password Shown');
                                 } else {
                                     passwordField.type = 'password';
-                                    showPasswordBtn.textContent = 'Show';
-                                    toastr.info('Password Hidden');
+                                    //showPasswordBtn.textContent = 'Show';
+                                    showPasswordBtn.innerHTML = '<i class="fas fa-eye-slash"></i>';
+                                    toastr.warning('Password Hidden');
                                 }
                             });
+
                         </script>
 
                         <div class="form-group mb-3">
@@ -326,6 +330,10 @@
 
                         <div class="d-grid">
                             <button type="submit" name="submit" class="btn btn-success">Register</button>
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center mt-4">
+                            <a style="text-align: center; color: darkgreen;" href="/login">Already have a company account?</a>
                         </div>
 
                         <hr>

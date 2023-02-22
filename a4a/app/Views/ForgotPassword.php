@@ -44,10 +44,9 @@
     <link rel="stylesheet" href="./assets/css/loginStyle_new.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./assets/css/accessiblity.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"> 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -125,40 +124,31 @@
 
 
                     <div class="form-content">
-                        <div class="logo-container">
-                            <img style="position: relative; top: -15px; filter: drop-shadow(1px 2px 1px #ffffff);" src="/assets/img/Everybody-Welcome-logo.png" alt="">
-                        </div>
+
+                    <div>
+                        <h3 style="text-shadow: 1px 1px 1px white; color: black; text-align: center;">Password Reset</h3>
+                    </div>
+
+                        <hr>
 
                         <?php if (session()->getFlashdata('msg')) : ?>
-                          <div class="alert alert-danger">
+                          <div class="alert alert-warning">
                                 <?= session()->getFlashdata('msg') ?>
                             </div>
                         <?php endif; ?>
-                        <form action="<?php echo base_url(); ?>/LoginController/loginAuth" method="post">
+                        <form action="<?php echo base_url(); ?>/LoginController/forgotPasswordAuth" method="post">
                             <div class="form-group mb-3">
                                 <input required type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" class="form-control">
                             </div>
-                            <div class="form-group mb-3">
-                            <div class="input-group" style="display: flex;">
-                                <input type="password" name="password" placeholder="Password" class="form-control"
-                                    required onkeyup="isGood(this.value)">
-                                <button type="button" class="btn btn-success ml-1" id="show-password-btn"><i class="fas fa-eye-slash"></i></button>
-                            </div>
-                            <small style="height: 2px" class="help-block" id="password-text"></small>
-                        </div>
 
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-success">Login</button>
-                            </div>
-                            <div class="d-flex justify-content-between mt-2">
-                                <a style="color: darkgreen;" href="/forgotPassword">Forgot Password</a> | 
-                                <a style="color: darkgreen;" href="/register">Register Account</a>
+                                <button type="submit" class="btn btn-success">Request Password Reset</button>
                             </div>
 
                             <hr>
 
                             <div class="d-grid">
-                                <a href="<?= base_url() ?>/home" class="btn btn-light">Return To Homepage</a>
+                                <a href="<?= base_url() ?>/login" class="btn btn-light">Return To Login</a>
                             </div>
                         </form>
                     </div>
@@ -174,14 +164,12 @@
           showPasswordBtn.addEventListener('click', () => {
               if (passwordField.type === 'password') {
                   passwordField.type = 'text';
-                  //showPasswordBtn.textContent = 'Hide';
-                  showPasswordBtn.innerHTML = '<i class="fas fa-eye"></i>';
-                  toastr.success('Password Shown');
+                  showPasswordBtn.textContent = 'Hide';
+                  toastr.info('Password Shown');
               } else {
                   passwordField.type = 'password';
-                  //showPasswordBtn.textContent = 'Show';
-                  showPasswordBtn.innerHTML = '<i class="fas fa-eye-slash"></i>';
-                  toastr.warning('Password Hidden');
+                  showPasswordBtn.textContent = 'Show';
+                  toastr.info('Password Hidden');
               }
           });
       </script>

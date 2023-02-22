@@ -27,7 +27,7 @@ $user = $session->get('name');
         </div>
         <div class="ibox ">
             <div class="ibox-title">
-                <h2>Client Dashboard</h2>
+                <h2>Admin Dashboard</h2>
             </div>
 
             <div class="ibox-content">
