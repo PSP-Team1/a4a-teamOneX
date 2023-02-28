@@ -6,10 +6,10 @@ body {
 .form-content {
 
   border-radius: 30px;
-  background-color: rgba(213, 195, 54, 0.48);  
+  background-color: rgba(215, 215, 215, 0.750);  
   padding: 30px;
   margin: auto;
-  width: 100%;
+  width: 85%;
   height: auto;
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }

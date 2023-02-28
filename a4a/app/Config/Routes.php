@@ -65,3 +65,4 @@ $routes->get('/createTemplate', 'CreateTemplateController::index');
 $routes->get('/deleteTemplate', 'DeleteTemplateController::index');
 $routes->get('/clientInbox', 'InboxController::index');
 $routes->get('/clientSettings', 'ClientSettingsController::index');
+$routes->get('/forgotPassword', 'LoginController::forgotPassword');

@@ -14,7 +14,7 @@ if ($hour >= 5 && $hour <= 11) {
 }
 
 $session = session();
-$user = $session->get('email');
+$user = $session->get('name');
 ?>
 
 
@@ -27,7 +27,7 @@ $user = $session->get('email');
         </div>
         <div class="ibox ">
             <div class="ibox-title">
-                <h2>Client Dashboard</h2>
+                <h2>Admin Dashboard</h2>
             </div>
 
             <div class="ibox-content">

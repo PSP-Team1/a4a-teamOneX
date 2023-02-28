@@ -14,6 +14,37 @@ class LoginController extends Controller
         echo view('login');
     }
 
+    public function forgotPassword()
+    {
+        $session = session();
+        helper(['form']);
+        echo view('forgotPassword');
+    }
+
+    public function forgotPasswordAuth()
+    {
+        $session = session();
+        $userModel = new UserModel();
+        $email = $this->request->getVar('email');
+
+        $data = $userModel->where('email', $email)->first();
+
+        if ($data) {
+            $emailData = $data['email'];
+            $authenticateEmail = strcmp($email, $emailData);
+            if (!$authenticateEmail) {
+            } else {
+                $session->setFlashdata('msg', 'That email doesn\'t exist.');
+                return redirect()->to('/forgotPassword');
+            }
+        } else {
+            $session->setFlashdata('msg', 'That email doesn\'t exist.');
+            return redirect()->to('/forgotPassword');
+        }
+    }
+
+
+
     public function loginAuth()
     {
 

@@ -38,18 +38,19 @@
 
     }
 </style>
-.light-background .fusion-header {
-display: block;
-background-color: white;
-}
-#white-image {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
-}
+<style>
+    .light-background .fusion-header {
+    display: block;
+    background-color: white;
+    }
+    #white-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    }
 </style>
 
 <style>
@@ -2531,7 +2532,7 @@ Professional access consultancy, training, auditing and design appraisal service
 
         lightBackgroundBtn.addEventListener("click", toggleLightBackground);
         lightBackgroundBtn.addEventListener("click", RemoveImage);
-    </script>
+    <script>
     lightBackgroundBtn.addEventListener("click", toggleLightBackground);
 
     </script>
