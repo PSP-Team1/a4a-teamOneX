@@ -207,7 +207,7 @@
         <div style="display: block; margin: auto; text-align: center;">
 
           <br><a class="btn btn-primary col-md-6" href="/startAudit" role="button">Start New Audit</a><br>
-          <br><a class="btn btn-primary col-md-6" href="/viewAudit role=" button">View Audit(s)</a><br>
+          <br><a class="btn btn-primary col-md-6" href="/ViewAudit role=" button">View Audit(s)</a><br>
           <br><a class="btn btn-primary col-md-6" href="/deleteAudit" role="button">Delete Audit(s)</a><br>
           <br><a class="btn btn-primary col-md-6" href="/viewFaq" role="button">View FAQ</a><br>
         </div>

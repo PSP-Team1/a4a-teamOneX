@@ -229,10 +229,10 @@
                               <a href="#" role="button" aria-label="Close Search" class="fusion-close-search"></a>
                            </div>
                            <ul id="menu-temporary" class="fusion-menu">
-                           <li  id="menu-item-11"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"  data-item-id="11"><a  href="<?= base_url() ?>/login" class="fusion-bar-highlight"><span class="menu-text">Login</span></a></li>
-                           <li  id="menu-item-11"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"  data-item-id="11"><a  href="<?= base_url() ?>/register" class="fusion-bar-highlight"><span class="menu-text">Register</span></a></li>
-                           <li  id="menu-item-11"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"  data-item-id="11"><a  href="<?= base_url() ?>/about" class="fusion-bar-highlight"><span class="menu-text">About</span></a></li>
-                              <li  id="menu-item-11"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"  data-item-id="11"><a  href="<?= base_url() ?>/contact" class="fusion-bar-highlight"><span class="menu-text">Contact</span></a></li>
+                           <li  id="menu-item-11"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"  data-item-id="11"><a  href="<?= base_url() ?>/Login" class="fusion-bar-highlight"><span class="menu-text">Login</span></a></li>
+                           <li  id="menu-item-11"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"  data-item-id="11"><a  href="<?= base_url() ?>/Register" class="fusion-bar-highlight"><span class="menu-text">Register</span></a></li>
+                           <li  id="menu-item-11"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"  data-item-id="11"><a  href="<?= base_url() ?>/FAQ" class="fusion-bar-highlight"><span class="menu-text">FAQ</span></a></li>
+                              <li  id="menu-item-11"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"  data-item-id="11"><a  href="<?= base_url() ?>/Contact" class="fusion-bar-highlight"><span class="menu-text">Contact</span></a></li>
                            </ul>
                         </nav>
                         <nav class="fusion-main-menu fusion-sticky-menu" aria-label="Main Menu Sticky">
@@ -332,7 +332,7 @@
 
                                        <div >
                                           <style>.fusion-body .fusion-button.button-1{border-radius:4px 4px 4px 4px;font-size:20px;line-height:26px;padding-top:20px;padding-right:55px;padding-bottom:20px;padding-left:55px;letter-spacing:0px;}.fusion-body .fusion-button.button-1 .fusion-button-text{text-transform:none;}</style>
-                                          <a style="background-color: indianred;" class="fusion-button button-flat fusion-button-default-size button-default button-1 fusion-button-default-span " target="_self" href="<?= base_url() ?>/login" style="margin-right:30px;"><span class="fusion-button-text">Customer Portal</span></a>
+                                          <a style="background-color: indianred;" class="fusion-button button-flat fusion-button-default-size button-default button-1 fusion-button-default-span " target="_self" href="<?= base_url() ?>/Login" style="margin-right:30px;"><span class="fusion-button-text">Customer Portal</span></a>
                                           <br><br>Don't have an account?<a class="" target="_self" href="<?= base_url() ?>/register" style="margin-right:30px;"><span class="fusion-button-text"> Click here</span></a>
                                        </div>
                                        <div class="fusion-separator fusion-no-medium-visibility fusion-no-large-visibility fusion-full-width-sep" style="align-self: center;margin-left: auto;margin-right: auto;margin-top:25px;margin-bottom:10px;width:100%;"></div>

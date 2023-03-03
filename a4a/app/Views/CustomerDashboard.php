@@ -57,7 +57,7 @@
                     <p>
                         <!-- <a class="btn btn-warning btn-outline" href="/startAudit" role="button"> <i
                                 class="fa fa-star text-warning "></i> Start New Audit</a> -->
-                        <a class="btn btn-success btn-outline" href="/audit" role="button"> View My Accessibility
+                        <a class="btn btn-success btn-outline" href="/Audit" role="button"> View My Accessibility
                             Audit(s)</a>
 
                         <!--<a class="btn btn-outline btn-danger" href="/deleteAudit" role="button"> <i

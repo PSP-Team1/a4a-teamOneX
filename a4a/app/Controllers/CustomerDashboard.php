@@ -5,7 +5,7 @@ namespace App\Controllers;
 // use App\Models\DashboardModel;
 
 
-class BusinessDashboard extends BaseController
+class CustomerDashboard extends BaseController
 {
     public function index()
     {
@@ -13,6 +13,6 @@ class BusinessDashboard extends BaseController
         // $appModel = new DashboardModel();
         // $data['companies'] = $appModel->getCompanies();
 
-        return view('NewCustDash');
+        return view('CustomerDashboard');
     }
 }

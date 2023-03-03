@@ -3,8 +3,8 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\passwordResetModel;
-use App\Models\deleteModel;
+use App\Models\PasswordResetModel;
+use App\Models\DeleteModel;
 use App\Models\QuestionModel;
 
 
@@ -43,30 +43,30 @@ class adminController extends BaseController
     public function resetPassword()
     {
         print_r($_POST);
-        $passwordM = new passwordResetModel();
+        $passwordM = new PasswordResetModel();
         $passwordM->resetPass();
         if ($passwordM) {
-            return redirect()->to('/adminPortal');
+            return redirect()->to('/AdminDashboard');
         }
     }
 
     public function deleteUser()
     {
         print_r($_POST);
-        $deluser = new deleteModel();
+        $deluser = new DeleteModel();
         $deluser->deleteUser();
         if ($deluser) {
-            return redirect()->to('/adminPortal');
+            return redirect()->to('/AdminDashboard');
         }
     }
 
     public function deleteAccount()
     {
         print_r($_POST);
-        $delaccount = new deleteModel();
+        $delaccount = new DeleteModel();
         $delaccount->deleteAccount();
         if ($delaccount) {
-            return redirect()->to('/adminPortal');
+            return redirect()->to('/AdminDashboard');
         }
     }
 
@@ -76,7 +76,7 @@ class adminController extends BaseController
         $addquestion = new QuestionModel();
         $addquestion->addquestion();
         if ($addquestion) {
-            return redirect()->to('/adminPortal');
+            return redirect()->to('/AdminDashboard');
         }
     }
 
@@ -86,7 +86,7 @@ class adminController extends BaseController
         $deletequestion = new QuestionModel();
         $deletequestion->deletequestion();
         if ($deletequestion) {
-            return redirect()->to('/adminPortal');
+            return redirect()->to('/AdminDashboard');
         }
     }
 

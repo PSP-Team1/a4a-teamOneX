@@ -10,12 +10,12 @@
         <div class="ibox ">
 
         <div class="ibox-title">
-                <h2>Client Settings</h2>
+                <h2>Admin Settings</h2>
             </div>
 
             <div class="ibox-content">
 
-                Welcome to the Client Settings Dashboard. This is where you can manage everything from personal account settings and individual user settings.
+                Welcome to the Admin Settings Dashboard. This is where you can manage everything from personal account settings and individual user settings.
             </div>
 
             <br>

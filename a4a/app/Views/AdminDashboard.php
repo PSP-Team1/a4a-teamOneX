@@ -38,19 +38,19 @@ $user = $session->get('name');
                     <h4>What would you like to do today?</h4>
                     <h5>Quick Links</h5>
                     <p>
-                        <a class="btn btn-success btn-outline" href="/createTemplate" role="button"> <i
+                        <a class="btn btn-success btn-outline" href="/AdminCreateTemplate" role="button"> <i
                                 class="fa fa-plus "></i>
                             Create Template(s)</a>
 
-                        <a class="btn btn-outline btn-danger" href="/deleteTemplate" role="button"> <i
+                        <a class="btn btn-outline btn-danger" href="/AdminDeleteTemplate" role="button"> <i
                                 class="fa fa-trash-o"></i>
                             Delete Template(s)</a>
 
-                        <a class="btn btn-outline btn-secondary" href="/clientInbox" role="button"> <i
+                        <a class="btn btn-outline btn-secondary" href="/AdminInbox" role="button"> <i
                                 class="fa fa-envelope-o"></i>
                             View Inbox</a>
 
-                        <a class="btn btn-outline btn-secondary" href="/clientSettings" role="button"> <i
+                        <a class="btn btn-outline btn-secondary" href="/AdminSettings" role="button"> <i
                                 class="fa fa-cog"></i>
                             View Settings</a>
                     </p>
@@ -103,7 +103,7 @@ $user = $session->get('name');
                             <td style=" footable-visible""><?= $company['date_created'] ?></td>
                             <td class="footable-visible footable-last-column">
                                 <a class="btn btn-success btn-outline"
-                                    href="/ClientDashboard/viewCompany/<?= $company['id'] ?>" role="button"> View</a>
+                                    href="/AdminDashboard/ViewCompany/<?= $company['id'] ?>" role="button"> View</a>
                         </tr>
                         <?php endforeach; ?>
                         <tr class="footable-row-detail" style="display: none;">

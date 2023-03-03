@@ -9,7 +9,7 @@
         </div>
         <div class="ibox ">
             <div class="ibox-title">
-                <h2>Client Inbox</h2>
+                <h2>Admin Inbox</h2>
             </div>
 
             <div class="ibox-content">
