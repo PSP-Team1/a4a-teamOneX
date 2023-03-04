@@ -102,8 +102,7 @@ $user = $session->get('name');
                             <td style="footable-visible""><?= $company['address'] ?></td>
                             <td style=" footable-visible""><?= $company['date_created'] ?></td>
                             <td class="footable-visible footable-last-column">
-                                <a class="btn btn-success btn-outline"
-                                    href="/AdminDashboard/ViewCompany/<?= $company['id'] ?>" role="button"> View</a>
+                                <a class="btn btn-success btn-outline" href="/AdminDashboard/ViewCompany/<?= $company['id'] ?>" role="button"> View</a>
                         </tr>
                         <?php endforeach; ?>
                         <tr class="footable-row-detail" style="display: none;">
