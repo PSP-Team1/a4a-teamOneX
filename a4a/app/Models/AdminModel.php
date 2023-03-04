@@ -36,6 +36,15 @@ class AdminModel extends Model{
         $session->set('name', $user->name);
         $session->set('email', $user->email);
     }
+
+    public function updatePassword($id, $newPassword) {
+
+        $db = db_connect();
+        $query = "UPDATE sys_users SET password=? WHERE id=?";
+        $result = $db->query($query, [$newPassword, $id]);
+    
+        $db->close();
+    }
     
     
 }

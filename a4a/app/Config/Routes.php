@@ -58,6 +58,7 @@ $routes->get('/AdminDeleteTemplate', 'DeleteTemplateController::index');
 $routes->get('/AdminInbox', 'InboxController::adminInbox');
 $routes->get('/AdminSettings', 'AdminSettingsController::index');
 $routes->get('/AdminChangeDetails', 'AdminSettingsController::changeDetails');
+$routes->get('/AdminUpdatePassword', 'AdminSettingsController::updatePassword');
 $routes->get('/CustomerDashboard', 'CustomerDashboard::index');
 $routes->get('/CustomerInbox', 'InboxController::customerInbox');
 $routes->get('/Audit', 'AuditController::index');
